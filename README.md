@@ -12,30 +12,12 @@ A healthcare cost prediction system consisting of two main components: a **REST 
 - **ONNX Model Integration**: Optimized model deployment and inference
 
 ### 🌐 Web Application (Healthcare Management System)
-- **Complete Healthcare Interface**: Comprehensive web application built with Next.js and TypeScript
+- **Complete Healthcare**: Comprehensive web application built with Next.js and TypeScript
 - **User Management**: Secure login system for medical personnel
 - **Prediction Dashboard**: Interface to consume API predictions
 - **ICD Management**: Full CRUD operations for ICD code database
 - **Prediction History**: Track and review previous cost predictions
 - **Waterfall Development**: Systematic development approach ensuring reliability
-
-## 🛠️ Technology Stack
-
-### Backend
-- **.NET Core C#** - High-performance REST API
-- **LightGBM** - Machine learning for cost prediction
-- **Random Forest** - Medical procedure classification
-- **ONNX** - Model serialization and deployment
-
-### Frontend
-- **Next.js** - React-based web framework
-- **TypeScript** - Type-safe JavaScript development
-- **Responsive Design** - Mobile-friendly interface
-
-### Machine Learning
-- **LightGBM** - Gradient boosting for cost prediction
-- **Random Forest** - Ensemble learning for classification
-- **Historical Data Analysis** - Patient data from 2020-2023
 
 ## 📊 System Architecture
 The system consists of two independent but integrated components:
@@ -119,7 +101,7 @@ Processes medical data and provides medical action recommendations using Random 
 The system demonstrates functional compliance with requirements through comprehensive testing, offering an explainable and scalable solution for healthcare cost management.
 
 ## 📚 Documentation
-- Complete API documentation available via Postman
+- Complete API documentation available via Postman (https://documenter.getpostman.com/view/43003420/2sAYk7T4US)
 - User manual for web application
 - Technical implementation guide
 - Model training and deployment instructions
