@@ -1,0 +1,39 @@
+@cpcostapi_HostAddress = http://localhost:5059
+
+GET {{cpcostapi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+### Mengirim request ke API untuk prediksi
+POST http://localhost:5059/api/CpCost/predict
+Content-Type: application/json
+
+{
+  "ICDPrimer": "A00.9",
+  "ICDSekunder1": "B00.2",
+  "ICDSekunder2": "C10.4",
+  "ICDSekunder3": "C33",
+  "LamaRawat": "3",
+  "TipePasien": "IN"
+}
+
+
+###
+GET http://localhost:5059/api/CpCost/test
+
+###
+GET http://localhost:5059/api/CpClasif/test
+
+###
+POST http://localhost:5059/api/CpClasif/predict
+Content-Type: application/json
+
+{
+    "ICDPrimer": "A16.1",
+    "ICDSekunder1": "K74.6",
+    "ICDSekunder2": "B24",
+    "ICDSekunder3": "Q43.1",
+    "LamaRawat": 15,
+    "TipePasien": "IN",
+    "KodeRujukan": ""
+}
