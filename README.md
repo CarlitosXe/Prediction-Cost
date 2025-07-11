@@ -1,16 +1,23 @@
 # Healthcare Cost Transparency System
 
 ## 🏥 Overview
-A comprehensive healthcare cost prediction system that combines machine learning algorithms with modern web technologies to provide accurate treatment cost estimation and medical procedure classification. This system addresses the critical need for transparency in healthcare costs, helping both patients and hospitals make informed financial decisions.
+A healthcare cost prediction system consisting of two main components: a **REST API** for machine learning predictions and a **web application** for user interface and data management. The API provides accurate treatment cost estimation and medical procedure classification using advanced ML algorithms, while the web application (developed using waterfall methodology) offers a complete healthcare management interface.
 
 ## 🎯 Key Features
-- **Cost Prediction**: Utilizes LightGBM algorithm to predict medical treatment costs based on historical patient data
+
+### 🤖 REST API (Prediction Service)
+- **Cost Prediction**: Utilizes LightGBM algorithm to predict medical treatment costs
 - **Medical Action Classification**: Employs Random Forest algorithm to classify required medical procedures
-- **Real-time API**: RESTful API built with .NET Core C# for high-performance predictions
-- **Modern Web Interface**: Responsive web application developed with Next.js and TypeScript
-- **Comprehensive Data Analysis**: Processes ICD codes, treatment classifications, and hospitalization duration
+- **Real-time Processing**: High-performance .NET Core C# API for instant predictions
+- **ONNX Model Integration**: Optimized model deployment and inference
+
+### 🌐 Web Application (Healthcare Management System)
+- **Complete Healthcare Interface**: Comprehensive web application built with Next.js and TypeScript
 - **User Management**: Secure login system for medical personnel
+- **Prediction Dashboard**: Interface to consume API predictions
+- **ICD Management**: Full CRUD operations for ICD code database
 - **Prediction History**: Track and review previous cost predictions
+- **Waterfall Development**: Systematic development approach ensuring reliability
 
 ## 🛠️ Technology Stack
 
@@ -31,25 +38,35 @@ A comprehensive healthcare cost prediction system that combines machine learning
 - **Historical Data Analysis** - Patient data from 2020-2023
 
 ## 📊 System Architecture
-The system follows a client-server architecture with clear separation of concerns:
-- **API Layer**: RESTful endpoints for prediction and classification
-- **ML Layer**: Trained models for cost estimation and medical action classification
-- **Web Layer**: Interactive user interface for data input and result visualization
-- **Data Layer**: Historical patient data processing and management
+The system consists of two independent but integrated components:
 
-## 🔧 API Endpoints
+### 🔧 REST API (Prediction Service)
+- **Focused Purpose**: Exclusively handles ML predictions
+- **ML Models**: LightGBM for cost prediction, Random Forest for classification
+- **ONNX Integration**: Optimized model serving and inference
+- **Stateless Design**: Pure prediction service without data persistence
+
+### 🌐 Web Application (Management System)
+- **Waterfall Development**: Systematic approach with clear phases
+- **Complete Interface**: Full healthcare management system
+- **API Integration**: Consumes prediction API for ML functionality
+- **Data Management**: Handles user authentication, history, and ICD management
+
+## 🔧 API Endpoints (Prediction Service Only)
 
 ### Cost Prediction
 ```
 POST /CpCost
 ```
-Accepts patient medical data and returns accurate cost estimates.
+Accepts patient medical data and returns accurate cost estimates using LightGBM.
 
 ### Medical Classification  
 ```
 POST /CpClasif
 ```
-Processes medical data and provides medical action recommendations.
+Processes medical data and provides medical action recommendations using Random Forest.
+
+**Note**: API is stateless and focused solely on prediction tasks. No data storage or user management.
 
 ## 📋 Input Parameters
 - **Primary ICD**: Main diagnosis code
@@ -65,11 +82,12 @@ Processes medical data and provides medical action recommendations.
 - **ICD Management**: Comprehensive ICD code database with CRUD operations
 
 ## 🔍 Key Innovations
-1. **Dual-Model Approach**: Combines LightGBM and Random Forest for comprehensive analysis
-2. **Explainable AI**: Provides transparent and interpretable predictions
-3. **Scalable Architecture**: Modular design for easy maintenance and updates
-4. **Real-time Processing**: Instant predictions through optimized API calls
-5. **Historical Learning**: Adaptive system that improves with hospital data evolution
+1. **Microservice Architecture**: Separate API service focused purely on ML predictions
+2. **Dual-Model Approach**: LightGBM for cost prediction, Random Forest for classification
+3. **Explainable AI**: Transparent and interpretable prediction results
+4. **Waterfall Web Development**: Systematic development ensuring reliability and maintainability
+5. **Service Integration**: Seamless communication between prediction API and web application
+6. **ONNX Optimization**: Efficient model deployment and inference
 
 ## 📈 Benefits
 - **For Patients**: Better financial planning with accurate cost estimates
@@ -78,12 +96,24 @@ Processes medical data and provides medical action recommendations.
 - **For Healthcare System**: Enhanced transparency and cost management
 
 ## 🚀 Getting Started
-1. Clone the repository
-2. Set up the .NET Core API backend
-3. Configure the Next.js frontend
-4. Load trained ML models (ONNX format)
-5. Configure database connection
-6. Run the application
+
+### API Service (Prediction)
+1. Clone the API repository
+2. Set up .NET Core environment
+3. Load trained ML models (ONNX format)
+4. Configure API endpoints
+5. Run the prediction service
+
+### Web Application (Management System)
+1. Clone the web application repository
+2. Set up Next.js environment
+3. Configure API integration endpoints
+4. Set up database for user management and history
+5. Run the web application
+
+### Integration
+- Web application consumes API predictions through HTTP requests
+- API remains stateless and focused on ML inference only
 
 ## 📊 Model Performance
 The system demonstrates functional compliance with requirements through comprehensive testing, offering an explainable and scalable solution for healthcare cost management.
@@ -103,7 +133,7 @@ This project is developed for educational and research purposes.
 ## 👥 Team
 - **Krisna Okky Widayat** - Backend Developer
 - **Guruh Aryotejo** - Frontend Developer  
-- **Abyan Setyaneva** - ML Enginerr
+- **Abyan Setyaneva** - ML Engineer
 - **Gigih Haidar Falah** - ML Engineer
 
 ## 🎓 Academic Context
